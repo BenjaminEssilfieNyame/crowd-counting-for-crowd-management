@@ -136,11 +136,11 @@ const DashBoardPage = () => {
   const handleSearch = () => {
     // e.preventDefault();
     console.log(searchTitle);
-    const searchEvent = async (searchId) => {
+    const searchEvent = async () => {
       const searched = await fetchQuery({
         uri: `http://localhost:4000/events/${searchId.crowdEventId}`,
-        method: "GET",
-        body: searchId,
+        // method: "GET",
+        // body: searchId,
       });
       setUrlDisp(searched);
     };

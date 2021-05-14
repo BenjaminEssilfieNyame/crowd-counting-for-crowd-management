@@ -9,8 +9,7 @@ import Register from "./layouts/Register";
 import NavContextProvider from "./context/NavContext";
 import AuthContextProvider from "./context/AuthContext";
 import UserContextProvider from "./context/UserContext";
-import CounterProtectedRoute from "./components/CounterProtectedRoute";
-import DashboardProtectedRoute from "./components/DashboardProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 library.add(fab);
 
@@ -23,16 +22,8 @@ function App() {
             <BrowserRouter>
               <Switch>
                 <Route path="/" exact component={LandingPage} />
-                <CounterProtectedRoute
-                  path="/count"
-                  exact
-                  component={CrowdCounter}
-                />
-                <DashboardProtectedRoute
-                  path="/events"
-                  exact
-                  component={DashBoard}
-                />
+                <ProtectedRoute path="/count" component={CrowdCounter} />
+                <ProtectedRoute path="/events" component={DashBoard} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
               </Switch>
